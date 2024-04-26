@@ -3,15 +3,13 @@
 # Relion app containerization
 
 # build the relion binary in separate container so we don't package the build env
-FROM docker.io/ubuntu:20.04 as build
+FROM docker.io/ubuntu:20.04 AS build
 ENV DIRPATH=/app
 ENV DIRNAME=relion
 WORKDIR $DIRPATH/
 
 # number of build processes
 ENV N_PROCESES=5
-
-COPY . .
 
 # prereqs
 RUN apt-get update
@@ -43,3 +41,6 @@ WORKDIR build
 
 RUN cmake ..
 RUN make -j $N_PROCESSES
+
+# COPY . .
+
