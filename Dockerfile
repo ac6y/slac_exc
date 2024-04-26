@@ -42,5 +42,7 @@ WORKDIR build
 RUN cmake ..
 RUN make -j $N_PROCESSES
 
+RUN make install
+
 # COPY . .
 
