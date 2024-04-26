@@ -10,7 +10,10 @@ ENV N_PROCESES=5
 COPY . .
 
 # prereqs
-RUN apt-get update && apt-get install -y\
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y\
+    tzdata
+RUN apt-get install -y\
     cmake\
     git\
     build-essential\
