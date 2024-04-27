@@ -8,6 +8,6 @@ login:
 	echo $(GITHUB_CR_TOKEN) | docker login ghcr.io -u $(GITHUB_USER) --password-stdin
 
 push: login
-	docker push ghcr.io/slac_exc/relion:latest
+	docker push ghcr.io/ac6y/slac_exc/relion-app:latest
 
 test:
