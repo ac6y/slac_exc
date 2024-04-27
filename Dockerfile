@@ -1,5 +1,4 @@
 # M. Okun SLAC HPC Linux Eng excercise
-
 # Relion app containerization
 
 # build the relion binary in separate container so we don't package the build env
