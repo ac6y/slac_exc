@@ -1,5 +1,5 @@
 build:
-	docker build -t relion-app .
+	docker build -t ghcr.io/ac6y/slac_exc/relion-app .
 
 run:
 	docker run -it relion-app
