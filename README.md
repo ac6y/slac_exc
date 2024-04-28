@@ -16,9 +16,11 @@ README
 make docker_build
 ```
 
-## Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
+## Set up authentication secrets file
 
-Create an env file you can source, eg from your .ssh directory with your github container registry token, eg, replacing `<your-secret-token>` with your actual token string:
+Create an env file you can source, eg from your .ssh directory with your github container registry token,
+replacing `<your-secret-token>` with your actual token string and 
+replacing `<your-github-username>` with your github username
 
 ```
 echo "export GITHUB_CR_TOKEN=<your-secret-token>" >> ~/.ssh/github_cr_token
@@ -34,7 +36,9 @@ chmod 600 ~/.ssh/github_cr_token
 ```
 
 
-Source the secret env var (TODO: there is likely a more secure way to pass this token that avoids echoing it in logs):
+## Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
+
+Source the secret env vars created above (TODO: there is likely a more secure way to pass this token that avoids echoing it in logs):
 
 ```
 source ~/.ssh/github_cr_token

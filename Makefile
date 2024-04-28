@@ -3,6 +3,7 @@ docker_build:
 
 docker_run:
 	docker run -it relion-app
+
 docker_login:
 	echo $(GITHUB_CR_TOKEN) | docker login ghcr.io -u $(GITHUB_USER) --password-stdin
 
