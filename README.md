@@ -46,12 +46,21 @@ Push the image to the Github Container Registry
 make docker_push
 ```
 
+## Authenticate Apptainer to Github Container Registry (ghcr)
 
-## Running tests via Docker
+```
+make apptainer_login
+```
+
+## Running tests via Docker (TODO)
+```
+make test
+```
 
 ## Running the Tutorial interactively via Apptainer
 
 ## Github actions CI/CD (TODO)
+* builds image
 * runs tests
 * auto-publishes (pushes) image to registry if tests pass
 
