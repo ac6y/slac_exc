@@ -36,7 +36,7 @@ chmod 600 ~/.ssh/github_cr_token
 ```
 
 
-## Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
+## Push (publishing) the local image to the Github Container Registry (ghcr.io)
 
 Source the secret env vars created above (TODO: there is likely a more secure way to pass this token that avoids echoing it in logs):
 
