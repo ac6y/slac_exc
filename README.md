@@ -16,19 +16,26 @@ make build
 
 ## Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
 
-Create a file you can source from your .ssh directory with your github container registry token, eg, replacing `<your-secret-token>` with your actual token string:
+Create an env file you can source, eg from your .ssh directory with your github container registry token, eg, replacing `<your-secret-token>` with your actual token string:
 
 ```
 echo "export GITHUB_CR_TOKEN=<your-secret-token>" > ~/.ssh/github_cr_token
 ```
 
-Source it by executing:
+Make the secret file owner-readable only:
+
+```
+chmod 600 ~/.ssh/github_cr_token
+```
+
+
+Source the secret env var (TODO: there is likely a more secure way to pass this token that avoids echoing it in logs):
 
 ```
 source ~/.ssh/github_cr_token
 ```
 
-Push the image:
+Push the image to the Github Container Registry:
   
 ```
 make push
