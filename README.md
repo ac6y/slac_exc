@@ -9,22 +9,31 @@
 
 * Building the container image
 
+    >```$ make build```
+
+* Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
+
+      Create a file you can source from your .ssh directory with your github container registry token, eg:
+
+    >```$ export GITHUB_CR_TOKEN=<your-secret-token>```
+
+      Source it by executing:
+
+    >```$ source ~/.ssh/github_cr_token```
+
+      Push the image:
+    >```$ make push```
+
+
 * Running tests via Docker
 
 * Running the Tutorial interactively via Apptainer
 
-* Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
-
-* Pushing custom app code
-
-* Github actions CI/CD
+* Github actions CI/CD (TODO)
     - runs tests
-    - publishes (pushes) image to registry if tests pass
+    - auto-publishes (pushes) image to registry if tests pass
 
-* Auto-Publishing the image via Github 
-
-
-* Deployment
+* Deployment Considerations
     * Container Runtime considerations
     * MPI
     * SLURM
@@ -35,7 +44,7 @@
 
  * MPI/CUDA env enablement
 
-    https://relion.readthedocs.io/en/latest/      Installation.html#edit-the-environment-set-up
+    https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
 
 
  * OpenMPI Slurm
