@@ -12,7 +12,7 @@ docker_push: docker_login
 apptainer_login:
 	echo $(GITHUB_CR_TOKEN) | apptainer registry login --username $(GITHUB_USER) docker://ghcr.io
 
-apptainer_run:
+apptainer_run: apptainer_login
 	apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 
 test:

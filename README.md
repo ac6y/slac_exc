@@ -21,7 +21,10 @@ make docker_build
 Create an env file you can source, eg from your .ssh directory with your github container registry token, eg, replacing `<your-secret-token>` with your actual token string:
 
 ```
-echo "export GITHUB_CR_TOKEN=<your-secret-token>" > ~/.ssh/github_cr_token
+echo "export GITHUB_CR_TOKEN=<your-secret-token>" >> ~/.ssh/github_cr_token
+echo "export GITHUB_USER=<your-github-username>" >> ~/.ssh/github_cr_token
+export APPTAINER_DOCKER_PASSWORD=<your-secret-token>" >> ~/.ssh/github_cr_token
+export APPTAINER_DOCKER_USERNAME=<your-github-username>" >> ~/.ssh/github_cr_token
 ```
 
 Make the secret file owner-readable only:
@@ -50,6 +53,12 @@ make docker_push
 
 ```
 make apptainer_login
+```
+
+## Run Relion via Apptainer (automatically runs `make apptainer_login` and pulss image as needed)
+
+```
+make apptainer_run
 ```
 
 ## Running tests via Docker (TODO)
