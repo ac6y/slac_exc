@@ -1,51 +1,62 @@
-### M. Okun SLAC HPC Linux Eng exercise
-### Relion app containerization
+M. Okun SLAC HPC Linux Eng exercise
+Relion app containerization
 
-### TODO
+# TODO
  * use cuda-enabled base image
 
 
-### README
+README
+======
 
-* Building the container image
+## Building the container image
 
-  ```make build```
+```
+make build
+```
 
-* Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
+## Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
 
-  Create a file you can source from your .ssh directory with your github container registry token, eg:
+Create a file you can source from your .ssh directory with your github container registry token, eg, replacing `<your-secret-token>` with your actual token string:
 
-  ```export GITHUB_CR_TOKEN=<your-secret-token>```
+```
+echo "export GITHUB_CR_TOKEN=<your-secret-token>" > ~/.ssh/github_cr_token
+```
 
-  Source it by executing:
+Source it by executing:
 
-  ```source ~/.ssh/github_cr_token```
+```
+source ~/.ssh/github_cr_token
+```
 
-  Push the image:
+Push the image:
   
-  ```make push```
+```
+make push
+```
 
 
-* Running tests via Docker
+## Running tests via Docker
 
-* Running the Tutorial interactively via Apptainer
+## Running the Tutorial interactively via Apptainer
 
-* Github actions CI/CD (TODO)
-    - runs tests
-    - auto-publishes (pushes) image to registry if tests pass
+## Github actions CI/CD (TODO)
+* runs tests
+* auto-publishes (pushes) image to registry if tests pass
 
-### Deployment Considerations
-* Container Runtime considerations
-* MPI
-* SLURM
-* GPU enabled images and runtimes
-  * CUDA (relion ships with support by default)
-  * AMD ROCm (compile option)
-  * Intel SYCL (compile option)
+Deployment Considerations
+=========================
 
- * MPI/CUDA env enablement
+## Container Runtime considerations
+## MPI
+## SLURM
+## GPU enabled images and runtimes
+* CUDA (relion ships with support by default)
+* AMD ROCm (compile option)
+* Intel SYCL (compile option)
 
-    https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
+ ## MPI/CUDA env enablement
+
+   https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
 
 
  * OpenMPI Slurm
