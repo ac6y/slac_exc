@@ -13,7 +13,7 @@ README
 ## Building the container image
 
 ```
-make build
+make docker_build
 ```
 
 ## Pushing (publishing) the local image to the Github Container Registry (ghcr.io)
@@ -37,10 +37,13 @@ Source the secret env var (TODO: there is likely a more secure way to pass this 
 source ~/.ssh/github_cr_token
 ```
 
-Push the image to the Github Container Registry:
+The next command automatically performs `make docker_login`, then pushes the image.
+You can use `make docker_login` alone to work with the registry manually.
+
+Push the image to the Github Container Registry
   
 ```
-make push
+make docker_push
 ```
 
 
