@@ -1,3 +1,5 @@
+run: apptainer_run
+
 docker_build:
 	docker build -t ghcr.io/ac6y/slac_exc/relion-app .
 
