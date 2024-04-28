@@ -8,7 +8,7 @@ ENV DIRNAME=relion
 WORKDIR $DIRPATH/
 
 # number of build processes
-ENV N_PROCESES=5
+ENV N_PROCESSES=5
 
 # prereqs
 RUN apt-get update
