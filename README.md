@@ -28,7 +28,7 @@ running the apptainer command manually:
 apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 ```
 
-Apptainer will run in the current working directory, and data will be saved to the `relion_data` subdirectory.
+Apptainer will run Relion in the current working directory.
 
 ## Run the Relion container but just launch a Bash shell instead of Relion, for interactive CLI access
 
