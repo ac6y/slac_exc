@@ -1,4 +1,5 @@
-run: apptainer_run
+run_without_login: 
+	apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 
 docker_build:
 	docker build -t ghcr.io/ac6y/slac_exc/relion-app .
