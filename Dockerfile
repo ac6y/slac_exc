@@ -33,7 +33,7 @@ RUN git clone -b ver4.0 https://github.com/3dem/relion.git
 #RUN conda env create -f environment.yml
 
 # build
-WORKDIR relion
+WORKDIR $DIRPATH/$DIRNAME
 
 RUN mkdir build
 WORKDIR build
@@ -43,5 +43,6 @@ RUN make -j $N_PROCESSES
 
 RUN make install
 
+WORKDIR $DIRPATH/$DIRNAME
 CMD relion
 
