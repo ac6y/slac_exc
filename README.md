@@ -28,6 +28,9 @@ running the apptainer command manually:
 apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 ```
 
+Apptainer will run in the current working directory, and data will be saved to the `relion_data` subdirectory.
+
+
 ## Building the container image
 
 ```
@@ -80,7 +83,7 @@ make apptainer_login
 ```
 
 ## Run Relion via Apptainer
-Note: this automatically runs `make apptainer_login` and pulls image as needed.  You can use
+Note: this automatically runs `make apptainer_login` and pulls image as needed.  Alternatively, you can
 `make run_without_login` to run a public image.
 
 ```
@@ -113,7 +116,7 @@ Deployment Considerations
 To run with CUDA support, for example,
   1. the CUDA drivers must be installed on the docker image (or a CUDA-enabled base image used)
   2. the Relion app must be compiled with CUDA support (CUDA support is enabled by default, and additional compile options switches are available for AMD and Intel)
-  3. the container must be run in a CUDA-enabled runtime on a 
+  3. the container must be run in a CUDA-enabled runtime on hardware with a compatible NVidia GPU.
 
  ## MPI/CUDA env enablement
 
