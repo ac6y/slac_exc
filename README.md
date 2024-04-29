@@ -30,6 +30,12 @@ apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 
 Apptainer will run in the current working directory, and data will be saved to the `relion_data` subdirectory.
 
+## Run the Relion container but just launch a Bash shell instead of Relion, for interactive CLI access
+
+```
+make run_bash_without_login
+```
+
 
 ## Building the container image
 
@@ -87,7 +93,7 @@ Note: this automatically runs `make apptainer_login` and pulls image as needed. 
 `make run_without_login` to run a public image.
 
 ```
-make apptainer_run
+make apptainer_run_with_login
 ```
 
 ## Running tests via Docker (TODO)

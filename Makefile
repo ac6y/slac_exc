@@ -1,6 +1,9 @@
 run_without_login: 
 	apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 
+run_bash_without_login:
+	apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest bash
+
 docker_build:
 	docker build -t ghcr.io/ac6y/slac_exc/relion-app .
 
@@ -16,7 +19,8 @@ docker_push: docker_login
 apptainer_login:
 	echo $(GITHUB_CR_TOKEN) | apptainer registry login --username $(GITHUB_USER) docker://ghcr.io
 
-apptainer_run: apptainer_login
+apptainer_run_with_login: apptainer_login
 	apptainer run docker://ghcr.io/$(GITHUB_USER)/slac_exc/relion-app:latest
+
 
 test:
