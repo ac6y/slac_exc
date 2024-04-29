@@ -16,7 +16,7 @@ The container associated with [this repo](https://github.com/ac6y/slac_exc) has 
 To pull and run it via the Apptainer runtime, first make sure Apptainer has been installed, eg via the
 command provided by apptainer.org that installs it in unprivileged mode:
 
-[https://apptainer.org/docs/admin/main/installation.html#install-unprivileged-from-pre-built-binaries](Install unprivileged from pre-built binaries)
+[Install unprivileged from pre-built binaries](https://apptainer.org/docs/admin/main/installation.html#install-unprivileged-from-pre-built-binaries)
 
 After installation, make sure that the apptainer binary is on your environment's path.
 
