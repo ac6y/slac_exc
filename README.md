@@ -9,6 +9,22 @@ Relion app containerization
 
 README
 ======
+## Running the existing container without credentials using the Apptainer runtime
+The container associated with this repo (github.com/ac6y/slac_exc) has been made publically readable.
+To pull and run it via the Apptainer runtime, first make sure Apptainer has been installed, eg via the
+command provided by apptainer.org that installs it in unprivileged mode:
+
+[https://apptainer.org/docs/admin/main/installation.html#install-unprivileged-from-pre-built-binaries]
+(Install unprivileged from pre-built binaries)
+
+After installation, make sure that the apptainer binary is on your environment's path.
+
+Now you should be able to pull and run the publically available image directly
+without any authentication by running:
+
+```
+make
+
 
 ## Building the container image
 
