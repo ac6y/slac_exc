@@ -21,8 +21,8 @@ via the command provided by apptainer.org that installs it in unprivileged mode:
 After installation, make sure that the apptainer binary is on your environment's path.
 
 Now you should be able to pull and run the publically available image directly
-without any authentication by simply typing `make` to run the command using the Makefile, or by
-running the command manually:
+without any authentication by simply typing `make run_without_login` to run the command using the Makefile, or by
+running the apptainer command manually:
 
 ```
 apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
@@ -73,13 +73,15 @@ make docker_push
 ```
 
 ## Authenticate Apptainer to Github Container Registry (ghcr)
+Note this is only required if you want to push images or pull non-public ones.
 
 ```
 make apptainer_login
 ```
 
 ## Run Relion via Apptainer
-Note: this automatically runs `make apptainer_login` and pulls image as needed.
+Note: this automatically runs `make apptainer_login` and pulls image as needed.  You can use
+`make run_without_login` to run a public image.
 
 ```
 make apptainer_run
