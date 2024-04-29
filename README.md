@@ -25,7 +25,7 @@ without any authentication by running:
 
 ```
 make
-
+```
 
 ## Building the container image
 
