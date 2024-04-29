@@ -9,7 +9,7 @@ Relion app containerization
 
 README
 ======
-## Running the existing container without credentials using the Apptainer runtime
+## Running the public cloud-hosted container in the Apptainer runtime
 The container associated with [this repo](https://github.com/ac6y/slac_exc) has been made
 [publically readable](https://ghcr.io/ac6y/slac_exc/relion-app:latest).
 
