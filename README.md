@@ -9,7 +9,7 @@ Relion app containerization
 
 README
 ======
-## Running the public cloud-hosted container in the Apptainer runtime
+## Run the public cloud-hosted container in the Apptainer runtime
 The container associated with [this repo](https://github.com/ac6y/slac_exc) has been made
 [publically readable](https://ghcr.io/ac6y/slac_exc/relion-app:latest).
 
@@ -37,7 +37,7 @@ make run_bash_without_login
 ```
 
 
-## Building the container image
+## Build the container image
 
 ```
 make docker_build
@@ -63,7 +63,7 @@ chmod 600 ~/.ssh/github_cr_token
 ```
 
 
-## Push (publishing) the local image to the Github Container Registry (ghcr.io)
+## Push (publish) the local image to the Github Container Registry (ghcr.io)
 
 Source the secret env vars created above (TODO: there is likely a more secure way to pass this
 token that avoids echoing it in logs):
@@ -101,7 +101,7 @@ make apptainer_run_with_login
 make test
 ```
 
-## Running the Tutorial interactively via Apptainer
+## Run the Tutorial interactively via Apptainer
 
 ## Github actions CI/CD (TODO)
 * builds image
