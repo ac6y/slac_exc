@@ -78,7 +78,8 @@ make docker_push
 make apptainer_login
 ```
 
-## Run Relion via Apptainer (automatically runs `make apptainer_login` and pulss image as needed)
+## Run Relion via Apptainer
+Note: this automatically runs `make apptainer_login` and pulls image as needed.
 
 ```
 make apptainer_run
