@@ -1,2 +1,20 @@
+# vim swap files
 *.swp
 *.swo
+
+# Relion data
+.Nodes/
+.gui_autopickjob.star
+.gui_ctffindjob.star
+.gui_extractjob.star
+.gui_importjob.star
+.gui_manualpickjob.star
+.gui_motioncorrjob.star
+.gui_projectdir
+AutoPick/
+CtfFind/
+Extract/
+Import/
+ManualPick/
+MotionCorr/
+default_pipeline.star
