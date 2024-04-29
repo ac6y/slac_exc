@@ -106,14 +106,22 @@ Deployment Considerations
 ## MPI
 ## SLURM
 ## GPU enabled images and runtimes
-* CUDA (relion ships with support by default)
-* AMD ROCm (compile option)
-* Intel SYCL (compile option)
+  * CUDA (relion ships with support by default)
+  * AMD ROCm (compile option)
+  * Intel SYCL (compile option)
+
+To run with CUDA support, for example,
+  1. the CUDA drivers must be installed on the docker image (or a CUDA-enabled base image used)
+  2. the Relion app must be compiled with CUDA support (CUDA support is enabled by default, and additional compile options switches are available for AMD and Intel)
+  3. the container must be run in a CUDA-enabled runtime on a 
 
  ## MPI/CUDA env enablement
 
    https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
 
+ * SLURM installation and configuration
+
+   https://slurm.schedmd.com/quickstart_admin.html#debinstall
 
  * OpenMPI Slurm
 
