@@ -13,18 +13,19 @@ README
 The container associated with [this repo](https://github.com/ac6y/slac_exc) has been made
 [publically readable](https://ghcr.io/ac6y/slac_exc/relion-app:latest).
 
-To pull and run it via the Apptainer runtime, first make sure Apptainer has been installed, eg via the
-command provided by apptainer.org that installs it in unprivileged mode:
+To pull and run it via the Apptainer runtime, first make sure Apptainer has been installed, eg
+via the command provided by apptainer.org that installs it in unprivileged mode:
 
 [Install unprivileged from pre-built binaries](https://apptainer.org/docs/admin/main/installation.html#install-unprivileged-from-pre-built-binaries)
 
 After installation, make sure that the apptainer binary is on your environment's path.
 
 Now you should be able to pull and run the publically available image directly
-without any authentication by running:
+without any authentication by simply typing `make` to run the command using the Makefile, or by
+running the command manually:
 
 ```
-make
+apptainer run docker://ghcr.io/ac6y/slac_exc/relion-app:latest
 ```
 
 ## Building the container image
@@ -55,7 +56,8 @@ chmod 600 ~/.ssh/github_cr_token
 
 ## Push (publishing) the local image to the Github Container Registry (ghcr.io)
 
-Source the secret env vars created above (TODO: there is likely a more secure way to pass this token that avoids echoing it in logs):
+Source the secret env vars created above (TODO: there is likely a more secure way to pass this
+token that avoids echoing it in logs):
 
 ```
 source ~/.ssh/github_cr_token
