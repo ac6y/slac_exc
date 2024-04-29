@@ -43,6 +43,5 @@ RUN make -j $N_PROCESSES
 
 RUN make install
 
-# COPY . .
 CMD relion
 

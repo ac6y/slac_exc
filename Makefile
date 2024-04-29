@@ -22,5 +22,5 @@ apptainer_login:
 apptainer_run_with_login: apptainer_login
 	apptainer run docker://ghcr.io/$(GITHUB_USER)/slac_exc/relion-app:latest
 
-
 test:
+	docker run -it relion-app tests/relion_test.sh
