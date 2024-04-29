@@ -112,37 +112,36 @@ Deployment Considerations
 =========================
 
 ## Container Runtime considerations
-## MPI
-## SLURM
 ## GPU enabled images and runtimes
-  * CUDA (relion ships with support by default)
-  * AMD ROCm (compile option)
-  * Intel SYCL (compile option)
+* CUDA (relion ships with support by default)
+* AMD ROCm (compile option)
+* Intel SYCL (compile option)
 
 To run with CUDA support, for example,
-  1. the CUDA drivers must be installed on the docker image (or a CUDA-enabled base image used)
-  2. the Relion app must be compiled with CUDA support (CUDA support is enabled by default, and additional compile options switches are available for AMD and Intel)
-  3. the container must be run in a CUDA-enabled runtime on hardware with a compatible NVidia GPU.
+1. the CUDA drivers must be installed on the docker image (or a CUDA-enabled base image used)
+2. the Relion app must be compiled with CUDA support (CUDA support is enabled by default, and additional compile options switches are available for AMD and Intel)
+3. the container must be run in a CUDA-enabled runtime on hardware with a compatible NVidia GPU.
 
- ## MPI/CUDA env enablement
+ ## MPI
 
-   https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
+https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
+https://apptainer.org/docs/user/main/mpi.html 
 
  * SLURM installation and configuration
 
-   https://slurm.schedmd.com/quickstart_admin.html#debinstall
+https://slurm.schedmd.com/quickstart_admin.html#debinstall
 
  * OpenMPI Slurm
 
-    Using mpirun is the recommended method for launching Open MPI jobs in Slurm jobs.  mpirun’s Slurm support should always be available, regardless of how Open MPI or Slurm was installed.
+Using mpirun is the recommended method for launching Open MPI jobs in Slurm jobs.  mpirun’s Slurm support should always be available, regardless of how Open MPI or Slurm was installed.
 
-    https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html
+https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html
 
  * SLURM Submit Scripts
 
-    https://docs.rcc.fsu.edu/software/relion/#starting-the-relion-gui
+https://docs.rcc.fsu.edu/software/relion/#starting-the-relion-gui
 
  * Environment Loaders (LMod)
 
-    https://docs.rcc.fsu.edu/software/relion/
+https://docs.rcc.fsu.edu/software/relion/
 
