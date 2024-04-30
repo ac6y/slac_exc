@@ -5,10 +5,22 @@ Relion app containerization
 
 # TODO
  * use cuda-enabled base image
+ * develop test package
+ * CI/CD auto-publish image
 
 
 README
 ======
+## Clone this repository
+
+Clone the repo and cd to the repo directory 
+
+```
+git clone git@github.com:ac6y/slac_exc.git
+cd slac_exc
+```
+
+
 ## Run the public cloud-hosted container in the Apptainer runtime
 The container associated with [this repo](https://github.com/ac6y/slac_exc) has been made
 [publically readable](https://ghcr.io/ac6y/slac_exc/relion-app:latest).
