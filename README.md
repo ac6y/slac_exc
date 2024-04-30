@@ -124,8 +124,18 @@ To run with CUDA support, for example,
 
  ## MPI
 
+MPI support is enabled in Relion by default and can run in parallel mode using multiple CPUs on
+the host machine via Apptainer using a single container via Apptainer.
+
+To deploy and run against multiple nodes in a static LAN cluster, some cluster configuration is
+needed, eg /etc/hostnames for the nodes and ssh keys for node access.
+
+A more flexible way than a static cluster is to manage cluster resources is via an orchestration
+framework such as Kubernetes.
+
 https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
 https://apptainer.org/docs/user/main/mpi.html 
+https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
 
  * SLURM installation and configuration
 
