@@ -3,16 +3,20 @@
 
 # build the relion binary in separate container so we don't package the build env
 FROM docker.io/ubuntu:20.04 AS build
+
 ENV DIRPATH=/app
 ENV DIRNAME=relion
 WORKDIR $DIRPATH/
+
+# non-interactive apt installs
+ENV DEBIAN_FRONTEND=noninteractive 
 
 # number of build processes
 ENV N_PROCESSES=5
 
 # prereqs
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y\
+RUN TZ=Etc/UTC apt-get install -y\
     tzdata
 RUN apt-get install -y\
     cmake\
@@ -43,6 +47,5 @@ RUN make -j $N_PROCESSES
 
 RUN make install
 
-WORKDIR $DIRPATH/$DIRNAME
 CMD relion
 
