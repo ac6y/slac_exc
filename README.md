@@ -119,7 +119,8 @@ Deployment Considerations
 
 To run with CUDA support, for example,
 1. the CUDA drivers must be installed on the docker image (or a CUDA-enabled base image used)
-2. the Relion app must be compiled with CUDA support (CUDA support is enabled by default, and additional compile options switches are available for AMD and Intel)
+2. the Relion app must be compiled with CUDA support (CUDA support is enabled by default, and
+additional compile options switches are available for AMD and Intel)
 3. the container must be run in a CUDA-enabled runtime on hardware with a compatible NVidia GPU.
 
  ## MPI
@@ -130,12 +131,13 @@ the host machine via Apptainer using a single container via Apptainer.
 To deploy and run against multiple nodes in a static LAN cluster, some cluster configuration is
 needed, eg /etc/hostnames for the nodes and ssh keys for node access.
 
-A more flexible way than a static cluster is to manage cluster resources is via an orchestration
-framework such as Kubernetes.
+A much more flexible way than a static cluster is to manage cluster resources is via an orchestration
+framework such as Kubernetes or a service like AWS EC2 with Elastic Fabric Adapter
 
 https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
 https://apptainer.org/docs/user/main/mpi.html 
 https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start.html
 
  * SLURM installation and configuration
 
@@ -143,7 +145,10 @@ https://slurm.schedmd.com/quickstart_admin.html#debinstall
 
  * OpenMPI Slurm
 
-Using mpirun is the recommended method for launching Open MPI jobs in Slurm jobs.  mpirun’s Slurm support should always be available, regardless of how Open MPI or Slurm was installed.
+"""
+Using mpirun is the recommended method for launching Open MPI jobs in Slurm jobs.
+mpirun’s Slurm support should always be available, regardless of how Open MPI or Slurm was installed.
+"""
 
 https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html
 
