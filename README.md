@@ -2,13 +2,6 @@ M. Okun SLAC HPC Linux Eng exercise
 
 Relion app containerization
 
-
-# TODO
- * use cuda-enabled base image
- * develop test package
- * CI/CD auto-publish image
-
-
 README
 ======
 ## Clone this repository
@@ -115,10 +108,10 @@ make test
 
 ## Run the Tutorial interactively via Apptainer
 
-## Github actions CI/CD (TODO)
+## Github actions CI/CD
 * builds image
-* runs tests
-* auto-publishes (pushes) image to registry if tests pass
+* runs tests (TODO)
+* auto-publishes (pushes) image to registry if build & tests pass
 
 Deployment Considerations
 =========================
@@ -171,4 +164,10 @@ https://docs.rcc.fsu.edu/software/relion/#starting-the-relion-gui
  * Environment Loaders (LMod)
 
 https://docs.rcc.fsu.edu/software/relion/
+
+# TODO
+ * use cuda-enabled base image
+ * develop test package
+ * CI/CD auto-publish image
+
 
