@@ -128,13 +128,21 @@ To run with CUDA support, for example,
 additional compile options switches are available for AMD and Intel)
 3. the container must be run in a CUDA-enabled runtime on hardware with a compatible NVidia GPU.
 
- ## MPI
+## MPI
 
 MPI support is enabled in Relion by default and can run in parallel mode using multiple CPUs on
 the host machine via Apptainer using a single container.
 
-https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
+Apptainer can make use of an existing MPI runtime environment already available on the host in a
+"bind/mount" approach that binds the host MPI into the container.
+
+Alternatively, a "hybrid" approach can be
+used by calling the apptainer command itself via the mpi executable.
+
 https://apptainer.org/docs/user/main/mpi.html 
+https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
+
+
 
 To deploy and run against multiple nodes in a static LAN cluster, some cluster configuration is
 needed, eg /etc/hostnames for the nodes and ssh keys for node access.
@@ -146,28 +154,26 @@ framework such as Kubernetes or a service like AWS EC2 with Elastic Fabric Adapt
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start.html
 
- * SLURM installation and configuration
+* SLURM installation and configuration
 
 https://slurm.schedmd.com/quickstart_admin.html#debinstall
 
- * OpenMPI Slurm
+* OpenMPI Slurm
 
 >Using mpirun is the recommended method for launching Open MPI jobs in Slurm jobs.
 mpirun’s Slurm support should always be available, regardless of how Open MPI or Slurm was installed.
 
 https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html
 
- * SLURM Submit Scripts
+* SLURM Submit Scripts
 
 https://docs.rcc.fsu.edu/software/relion/#starting-the-relion-gui
 
- * Environment Loaders (LMod)
+* Environment Loaders (LMod)
 
 https://docs.rcc.fsu.edu/software/relion/
 
 # TODO
- * use cuda-enabled base image
- * develop test package
- * CI/CD auto-publish image
-
-
+* use cuda-enabled base image
+* develop test package that downloads sample data and runs tutorial commands.
+* ✓CI/CD auto-publish image
