@@ -113,6 +113,9 @@ make test
 * runs tests (TODO)
 * auto-publishes (pushes) image to registry if build & tests pass
 
+
+
+
 Deployment Considerations
 =========================
 
@@ -135,14 +138,13 @@ the host machine via Apptainer using a single container.
 
 Apptainer can also make use of an existing multi-node MPI runtime environment already available
 on the host.
-* A "bind/mount" approach that binds the host MPI into the container.
+* A "bind/mount" approach that binds the host MPI executable into the container.
 
 * Alternatively, a "hybrid" approach can be
-used by calling the apptainer command itself via the mpi executable.
+used by calling the apptainer command itself via the MPI executable.
 
 https://apptainer.org/docs/user/main/mpi.html 
 https://relion.readthedocs.io/en/latest/Installation.html#edit-the-environment-set-up
-
 
 
 To deploy and run against multiple nodes in a static LAN cluster, some cluster configuration is
