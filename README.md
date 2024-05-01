@@ -133,10 +133,11 @@ additional compile options switches are available for AMD and Intel)
 MPI support is enabled in Relion by default and can run in parallel mode using multiple CPUs on
 the host machine via Apptainer using a single container.
 
-Apptainer can make use of an existing MPI runtime environment already available on the host in a
-"bind/mount" approach that binds the host MPI into the container.
+Apptainer can also make use of an existing multi-node MPI runtime environment already available
+on the host.
+* A "bind/mount" approach that binds the host MPI into the container.
 
-Alternatively, a "hybrid" approach can be
+* Alternatively, a "hybrid" approach can be
 used by calling the apptainer command itself via the mpi executable.
 
 https://apptainer.org/docs/user/main/mpi.html 
