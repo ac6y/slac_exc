@@ -12,3 +12,14 @@ relion_import  --do_movies  --optics_group_name "opticsGroup1" --optics_group_mt
 
 # CTF Estimation
 `which relion_run_ctffind_mpi` --i MotionCorr/job002/corrected_micrographs.star --o CtfFind/job003/ --Box 512 --ResMin 30 --ResMax 5 --dFMin 5000 --dFMax 50000 --FStep 500 --dAst 100 --ctffind_exe /public/EM/ctffind/ctffind.exe --ctfWin -1 --is_ctffind4  --fast_search  --use_given_ps   --pipeline_control CtfFind/job003/
+
+#`which relion_run_ctffind_mpi` --i MotionCorr/job002/corrected_micrographs.star --o CtfFind/job003/ --Box 512 --ResMin 30 --ResMax 5 --dFMin 5000 --dFMax 50000 --FStep 500 --dAst 100 --ctffind_exe /public/EM/ctffind/ctffind.exe --ctfWin -1 --is_ctffind4  --fast_search  --use_given_ps  --only_do_unfinished   --pipeline_control CtfFind/job006/
+
+# Manual Picking
+`which relion_manualpick` --i MotionCorr/job002/corrected_micrographs.star --odir ManualPick/job004/ --pickname manualpick --allow_save   --fast_save --selection ManualPick/job004/micrographs_selected.star --scale 0.25 --sigma_contrast 3 --black 0 --white 0 --topaz_denoise --topaz_exe /public/EM/RELION/topaz --particle_diameter 200  --pipeline_control ManualPick/job004/
+
+# Auto Picking
+`which relion_autopick` --i MotionCorr/job002/corrected_micrographs.star --odir AutoPick/job005/ --pickname autopick --LoG  --LoG_diam_min 200 --LoG_diam_max 250 --shrink 0 --lowpass 20 --LoG_adjust_threshold 0  --pipeline_control AutoPick/job005/
+
+# Particle Extraction
+`which relion_preprocess` --i CtfFind/job006/micrographs_ctf.star --coord_list AutoPick/job005/autopick.star --part_star Extract/job008/particles.star --part_dir Extract/job008/ --extract --extract_size 256 --float16  --scale 64 --norm --bg_radius 25 --white_dust -1 --black_dust -1 --invert_contrast   --pipeline_control Extract/job008/
