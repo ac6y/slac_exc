@@ -9,7 +9,7 @@ README
 Clone the repo and cd to the repo directory 
 
 ```
-git clone git@github.com:ac6y/slac_exc.git
+git clone https://github.com/ac6y/slac_exc.git
 cd slac_exc
 ```
 
