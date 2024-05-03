@@ -1,8 +1,7 @@
 # M. Okun SLAC HPC Linux Eng excercise
 # Relion app containerization
 
-# build the relion binary in separate container so we don't package the build env
-FROM docker.io/ubuntu:20.04 AS build
+FROM docker.io/ubuntu:20.04
 
 ENV DIRPATH=/app
 ENV DIRNAME=relion
@@ -30,11 +29,8 @@ RUN apt-get install -y\
     ghostscript\
     libxft-dev
 
-# git repo, branch ver4.0
+# clone git repo, branch ver4.0
 RUN git clone -b ver4.0 https://github.com/3dem/relion.git
-
-# python conda (optional)
-#RUN conda env create -f environment.yml
 
 # build
 WORKDIR $DIRPATH/$DIRNAME
