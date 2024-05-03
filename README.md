@@ -106,8 +106,6 @@ make apptainer_run_with_login
 make test
 ```
 
-## Run the Tutorial interactively via Apptainer
-
 ## Github actions CI/CD
 * builds image
 * runs tests (TODO)
