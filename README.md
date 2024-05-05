@@ -57,8 +57,8 @@ replacing `<your-github-username>` with your github username
 ```
 echo "export GITHUB_CR_TOKEN=<your-secret-token>" >> ~/.ssh/github_cr_token
 echo "export GITHUB_USER=<your-github-username>" >> ~/.ssh/github_cr_token
-export APPTAINER_DOCKER_PASSWORD=<your-secret-token>" >> ~/.ssh/github_cr_token
-export APPTAINER_DOCKER_USERNAME=<your-github-username>" >> ~/.ssh/github_cr_token
+echo "export APPTAINER_DOCKER_PASSWORD=<your-secret-token>" >> ~/.ssh/github_cr_token
+echo "export APPTAINER_DOCKER_USERNAME=<your-github-username>" >> ~/.ssh/github_cr_token
 ```
 
 Make the secret file owner-readable only:
